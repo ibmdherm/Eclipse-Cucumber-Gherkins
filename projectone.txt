@@ -1,0 +1,73 @@
+Day 6 
+Website to be used - http://elearningm1.upskills.in/
+=======================================================
+1. Click on Signup 
+2. Enter the mandatory information and click on register
+3. Verify message "Your personal settings have been registered."
+4. Do the above steps for 10 different sign up's
+========================================================
+1. CLick on Compose
+2. Enter the information being shown the page 
+3. click on send message 
+========================================================
+1. Click on edit profile 
+2. upload an image using selenium 
+3. Choose language 
+4. Enter skype details ( random details ) 
+5. Enter linkedin profiel url 
+6. Click on save setting 
+
+
+
+
+======================
+Feature: Registration form for Upskills
+
+Scenario Outline: Add details of Student
+
+  Given User should be on registration form
+  When Registration form should be visible
+  Then Signup new student
+
+Examples: 
+| firstname | Dharmesh |
+| lastname | Tripathi |
+| Email | ewjferjn999@g.com |
+| Username | ewjferjn999 |
+| Pass | Test@123 |
+| ConfirmPass | Test@123 |
+| Phone | 1234567890 |
+| Language | English |
+| Code | Test@123 |
+| Skype | Test@123 |
+| LinkedInUrl | http://Test@123 |
+
+  And I press "Sign in"
+  Then I should see "Homepage"
+ 
+  When Student edit form should be visible
+  Then Edit detail of new student
+
+Examples: 
+| Language | English |
+| Image | RoboClass |
+| Skype | Test@123 |
+| LinkedInUrl | http://Test@123 |
+
+  And Press on  "Save setting"
+  Then I shloud see edited details of student
+ 
+  When Compose email form should be visible
+  Then  Fill details of email
+
+Examples: 
+| SendTo | ewjferjn999@g.com |
+| Subject | Upskill Project |
+| Message | I am a project One. |
+| attachments | RoboClass |
+
+  And Press on  "Send message"
+  Then I shloud see message sent.
+ 
+ 
+ 
